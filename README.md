@@ -439,5 +439,4 @@ Event model has indexes on:
 **Status**: ✅ MVP COMPLETE - Ready for Demo!
 
 For questions or support, please open an issue on GitHub.
-#   s y d n e y - - W e b s i t e  
- 
+#
