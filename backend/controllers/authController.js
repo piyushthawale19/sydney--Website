@@ -23,8 +23,16 @@ exports.googleCallback = async (req, res) => {
         // Generate JWT token
         const token = generateToken(user._id);
 
+        let frontendUrl = process.env.FRONTEND_URL;
+
+        // Safety check: Prevent localhost redirect in production
+        if (process.env.NODE_ENV === 'production' && frontendUrl.includes('localhost')) {
+            console.log('⚠️ Overriding localhost FRONTEND_URL to production Vercel URL');
+            frontendUrl = 'https://sydney-website-kappa.vercel.app';
+        }
+
         // Redirect to frontend with token
-        const redirectUrl = `${process.env.FRONTEND_URL}/auth/callback?token=${token}`;
+        const redirectUrl = `${frontendUrl}/auth/callback?token=${token}`;
         console.log('Google Auth Success. Redirecting to:', redirectUrl);
         res.redirect(redirectUrl);
     } catch (error) {
