@@ -1,0 +1,27 @@
+{
+    "name": "sydney-events-scraper",
+    "version": "1.0.0",
+    "description": "Event scraping service for Sydney events",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "scrape": "node scrapers/runAll.js",
+        "test": "node scrapers/test.js"
+    },
+    "keywords": [
+        "scraper",
+        "puppeteer",
+        "cheerio",
+        "events"
+    ],
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "axios": "^1.6.2",
+        "cheerio": "^1.0.0-rc.12",
+        "puppeteer": "^21.7.0",
+        "dotenv": "^16.3.1",
+        "mongoose": "^8.0.3",
+        "node-cron": "^3.0.3"
+    }
+}
