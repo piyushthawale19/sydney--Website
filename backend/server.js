@@ -14,6 +14,9 @@ connectDB();
 
 const app = express();
 
+// Trust proxy (Required for Render/Vercel deployment)
+app.set('trust proxy', 1);
+
 // Security middleware
 app.use(helmet());
 
