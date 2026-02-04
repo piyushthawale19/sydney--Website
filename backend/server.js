@@ -26,11 +26,14 @@ app.use(cors({
         const allowedOrigins = [
             'http://localhost:5173',
             process.env.FRONTEND_URL,
-            process.env.FRONTEND_URL ? process.env.FRONTEND_URL.replace(/\/$/, '') : null, // No trailing slash
-            process.env.FRONTEND_URL ? process.env.FRONTEND_URL.replace(/\/$/, '') + '/' : null // With trailing slash
+            process.env.FRONTEND_URL ? process.env.FRONTEND_URL.replace(/\/$/, '') : null,
+            process.env.FRONTEND_URL ? process.env.FRONTEND_URL.replace(/\/$/, '') + '/' : null
         ].filter(Boolean);
 
-        if (!origin || allowedOrigins.includes(origin)) {
+        // Allow all Vercel deployments (previews + production)
+        const isVercel = origin && origin.includes('.vercel.app');
+
+        if (!origin || allowedOrigins.includes(origin) || isVercel) {
             callback(null, true);
         } else {
             console.log('Blocked by CORS:', origin);
