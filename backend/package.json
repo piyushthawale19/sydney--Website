@@ -8,7 +8,12 @@
     "dev": "nodemon server.js",
     "seed": "node scripts/seed.js"
   },
-  "keywords": ["express", "mongodb", "events", "scraper"],
+  "keywords": [
+    "express",
+    "mongodb",
+    "events",
+    "scraper"
+  ],
   "author": "",
   "license": "MIT",
   "dependencies": {
@@ -24,8 +29,6 @@
     "passport-google-oauth20": "^2.0.0",
     "express-session": "^1.17.3",
     "axios": "^1.6.2",
-    "cheerio": "^1.0.0-rc.12",
-    "puppeteer": "^21.7.0",
     "node-cron": "^3.0.3",
     "nodemailer": "^6.9.7",
     "validator": "^13.11.0",
