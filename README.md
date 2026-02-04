@@ -95,7 +95,7 @@ mongod
 **Option B: MongoDB Atlas (Recommended)**
 1. Create account at [mongodb.com/atlas](https://www.mongodb.com/atlas)
 2. Create a free cluster
-3. Get connection string (e.g., `mongodb+srv://username:password@cluster.mongodb.net/sydney-events`)
+3. Get connection string (e.g., `mongodb+srv://username `)
 
 ### 3. Google OAuth Setup
 
@@ -440,3 +440,4 @@ Event model has indexes on:
 
 For questions or support, please open an issue on GitHub.
 #
+
