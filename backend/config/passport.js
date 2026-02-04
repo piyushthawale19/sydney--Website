@@ -15,12 +15,19 @@ passport.deserializeUser(async (id, done) => {
     }
 });
 
+// Debug logging for OAuth
+console.log('---------------------------------------------------');
+console.log('Google Client Configuration:');
+console.log('CALLBACK_URL:', process.env.GOOGLE_CALLBACK_URL);
+console.log('---------------------------------------------------');
+
 passport.use(
     new GoogleStrategy(
         {
             clientID: process.env.GOOGLE_CLIENT_ID,
             clientSecret: process.env.GOOGLE_CLIENT_SECRET,
             callbackURL: process.env.GOOGLE_CALLBACK_URL,
+
             scope: ['profile', 'email']
         },
         async (accessToken, refreshToken, profile, done) => {
